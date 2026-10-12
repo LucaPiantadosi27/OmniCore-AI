@@ -12,8 +12,17 @@ successiva senza averla soddisfatta. Le personalizzazioni vanno tenute separate 
 
 - Clone completato in questa cartella.
 - Docker 29.8.2 e Compose v5.1.3 presenti. Node 20.20.2 presente.
-- **Bun NON installato** (serve >= 1.3, il repo fissa bun@1.3.14).
-- Non ancora eseguiti: login CopilotKit, setup Intelligence, avvio.
+- Bun 1.3.14 installato (`~/.bun/bin/bun`), `bun install` eseguito.
+- Fase 0 completata: `origin`→`upstream` (CopilotKit/OpenBot), nuovo `origin` privato
+  (github.com/LucaPiantadosi27/OmniCore-AI), branch `omnicore/main` pushato,
+  `examples/omnicore/` creato da fintech (brand OmniCore AI), `AGENTS.md` aggiunto.
+- `.env` creato: `TENANT_PACKAGE_DIR=../examples/omnicore`, `KEY_ENCRYPTION_KEY` generata,
+  `OPENBOT_SINGLE_USER=true`.
+- Baseline: typecheck OK, lint OK, `bun test` 4948 pass / 139 fail / 57 skip —
+  failure ambientali (no DB, no chiavi modello) + mismatch upstream
+  `@copilotkit/react-core@1.77.0` (`applyHeadersToAgent` mancante). Da re-verificare dopo l'avvio.
+- Non ancora eseguiti: login CopilotKit (CLI in attesa di sign-in browser),
+  setup Intelligence, `OPENAI_API_KEY`, avvio.
 
 ## Fase 0 - Fondamenta del repository
 
