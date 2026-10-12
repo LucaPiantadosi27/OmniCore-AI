@@ -1,8 +1,27 @@
 # OmniCore AI
 
-Fork di CopilotKit/OpenBot. Le personalizzazioni OmniCore vivono in `examples/omnicore/`
-(tenant package) e in moduli nuovi separati dal codice upstream, per poter fare merge di
-`upstream/main`. Vedi `PLAN.md` per il piano completo.
+Fork di CopilotKit/OpenBot (import vendored da `upstream/main` @ 7b1c20a, MIT).
+Le personalizzazioni OmniCore vivono in `examples/omnicore/` (tenant package) e in
+moduli nuovi separati dal codice upstream. Vedi `PLAN.md` per il piano completo.
+
+## Branch e remote
+
+- `main`: branch di lavoro OmniCore, pushato su `origin` (repo privato
+  LucaPiantadosi27/OmniCore-AI). Storia orfana: **non** contiene i commit upstream,
+  quindi il repo mostra solo i contributor di OmniCore.
+- `upstream`: remote read-only verso CopilotKit/OpenBot, usato solo in locale per i sync.
+
+### Sync da upstream
+
+```sh
+git fetch upstream
+# Prima volta soltanto (storie non correlate): risolve i conflitti
+# prendendo la versione upstream, sicuro finche' le modifiche OmniCore
+# restano in file/directory separati.
+git merge --allow-unrelated-histories -X theirs upstream/main
+# Dal sync successivo upstream/main e' antenato di main: merge normale.
+git merge upstream/main
+```
 
 ## Requisiti
 

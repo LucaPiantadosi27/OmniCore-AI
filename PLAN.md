@@ -14,7 +14,8 @@ successiva senza averla soddisfatta. Le personalizzazioni vanno tenute separate 
 - Docker 29.8.2 e Compose v5.1.3 presenti. Node 20.20.2 presente.
 - Bun 1.3.14 installato (`~/.bun/bin/bun`), `bun install` eseguito.
 - Fase 0 completata: `origin`→`upstream` (CopilotKit/OpenBot), nuovo `origin` privato
-  (github.com/LucaPiantadosi27/OmniCore-AI), branch `omnicore/main` pushato,
+  (github.com/LucaPiantadosi27/OmniCore-AI). `main` e' branch orfano (import vendored
+  di 7b1c20a + commit OmniCore): niente storia/contributors upstream nel repo remoto.
   `examples/omnicore/` creato da fintech (brand OmniCore AI), `AGENTS.md` aggiunto.
 - `.env` creato: `TENANT_PACKAGE_DIR=../examples/omnicore`, `KEY_ENCRYPTION_KEY` generata,
   `OPENBOT_SINGLE_USER=true`.
@@ -27,7 +28,7 @@ successiva senza averla soddisfatta. Le personalizzazioni vanno tenute separate 
 ## Fase 0 - Fondamenta del repository
 
 1. Rinominare `origin` in `upstream`, creare un nuovo `origin` privato per OmniCore AI.
-2. Creare il branch `omnicore/main`; `main` resta specchio di upstream.
+2. `main` come branch OmniCore (storia orfana, niente commit upstream nel repo privato); `upstream` resta remote locale per i merge futuri.
 3. Creare `examples/omnicore/` copiando `examples/fintech/` come tenant package (agents, channels, model, skills, brand).
 4. Aggiungere `AGENTS.md` con comandi di build/test/lint (vedi Fase 1).
 5. Verificare che `.env` sia in `.gitignore`.
